@@ -1,1 +1,22 @@
 <h1>Day la home</h1>
+
+<h1>Chao ban {{ name }}</h1>
+
+<input type="text " [(ngModel)]="age" />
+<br />
+<input type="text" [value]="name" [title]="'dssdsds' + name" />
+
+<button (click)="resetName()">Reset</button>
+<h1 *ngIf="age < 17">Ban con non lam</h1>
+<h1 *ngIf="age > 16">Ban con lon lam</h1>
+
+<div *ngIf="age < 18; then gia; else tre"></div>
+
+<ng-template #tre><h1>Ban tre roi</h1></ng-template>
+<ng-template #gia><h1>Ban gia roi</h1></ng-template>
+
+<div class="container">
+  <div *ngFor="let trai of traicay; let i = index">
+    <li>{{ i + 1 }}-{{ trai }}</li>
+  </div>
+</div>
