@@ -13,7 +13,13 @@ export class HomeComponent {
    this.name = '';
   }
 
-  public traicay: string[]  = ["Tao","Nho","Xoai"]
+  public traicay: {name:string , price:number , hagia:boolean} [] =[
+    {name :"Tao", price:-104343300 , hagia:false},
+    {name :"Nho", price:-104343400, hagia:true},
+    {name :"Soai", price:10343500, hagia:false},
+    {name :"Luu", price:1053434030, hagia:true},
+    {name :"Dua hau", price:1034500, hagia:false},
+  ] ;
 
   public sothutu: number[] = [1,2,3,4,5,6,7,8]
 

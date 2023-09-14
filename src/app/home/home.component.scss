@@ -3,3 +3,15 @@
     height: 500px;
     border: 1px solid black;
 }
+th ,td {
+    font-size: 3em;
+    border: 1px solid black;
+    padding: 10px 20px;
+}
+table {
+    border-collapse: collapse;
+    margin: 100px auto;
+}
+.so-am {
+    color: red;
+}

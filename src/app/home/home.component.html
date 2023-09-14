@@ -1,4 +1,4 @@
-<h1>Day la home</h1>
+<!-- <h1>Day la home</h1>
 
 <h1>Chao ban {{ name }}</h1>
 
@@ -19,4 +19,29 @@
   <div *ngFor="let trai of traicay; let i = index">
     <li>{{ i + 1 }}-{{ trai }}</li>
   </div>
-</div>
+</div> -->
+
+<h1>{{ name }}</h1>
+<table>
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>Ten</th>
+      <th>Gia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let trai of traicay; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ trai.name | uppercase }}</td>
+      <td>
+        <span [ngClass]="{ 'so-am': trai.price < 0 }">
+          {{ trai.price | currency : "VND" : "symbol" : "1.0" }}</span
+        >
+      </td>
+      <td>
+        <span *ngIf="trai.hagia">dang ha gia</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
