@@ -21,7 +21,7 @@
   </div>
 </div> -->
 
-<h1>{{ name }}</h1>
+<!-- <h1>{{ name }}</h1>
 <table>
   <thead>
     <tr>
@@ -44,4 +44,30 @@
       </td>
     </tr>
   </tbody>
-</table>
+</table> -->
+
+<h1 [appHightLight]="'blue'">sdsdsds</h1>
+<input type="text" [value]="loginName" (change)="loginNames($event)" />
+<ul [ngSwitch]="loginName">
+  <li *ngSwitchCase="'admin'">
+    <div class="container">
+      <select name="city" (change)="changeCity($event)">
+        <option *ngFor="let data of cities" value="{{ data.city }}">
+          {{ data.city }}
+        </option>
+      </select>
+
+      <select name="district">
+        <option *ngFor="let district of district" value="{{ district }}">
+          {{ district }}
+        </option>
+      </select>
+    </div>
+  </li>
+  <li *ngSwitchCase="'user'">
+    <h1>Day la user</h1>
+  </li>
+  <li *ngSwitchDefault>
+    <h1>Day la oc</h1>
+  </li>
+</ul>

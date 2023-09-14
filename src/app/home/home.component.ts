@@ -30,10 +30,41 @@ export class HomeComponent {
     {names:"john 3",ages:154}
   ]
 
+  public loginNames(event:any){
+    this.loginName = event.target.value
+    console.log(this.loginName);
+  }
+  public loginName :string = 'admin';
+
+  public district : string [] = ["Quận huyện"]
+  public cities : {city:string , distric:string []} [] =[
+    {city :'Chọn thành phố',distric: ["Quận huyện"]},
+    {city :'An giang',distric: [
+      "Thành phố Vũng Tàu","Thị xã Bà Rịa","Thị xã Phú Mỹ","Huyện Châu Đức","Huyện Côn Đảo","Huyện Đất Đỏ","Huyện Long Điền"
+    ]},
+    {city :'Bà Rịa - Vũng Tàu',distric: [
+      "Huyện Bù Đăng","Huyện Bù Đốp","Huyện Bù Gia Mập","Huyện Chơn Thành","Huyện Đồng Phú","Huyện Hớn Quản"
+    ]},
+    {city :'Bạc Liêu',distric: [
+      "Huyện Ea Kar","Huyện Ea Súp","Huyện Krông Ana","Huyện Krông Bông","Huyện Krông Buk","Huyện Krông Năng"
+    ]},
+    {city :' Bắc Kạn',distric: [
+      "Quận Thanh Xuân","Huyện Thường Tín","Huyện Ứng Hòa"
+    ]}
+  ]
  
+  public changeCity(event:any){
+    const city = event.target.value;
+    if(!city) {
+      return;
+    }
+
+    this.district = this.cities.find(data=>data.city === city)?.distric || [];
+
+  }
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    console.log(this.traicay);
+   console.log("help");
   }
 }

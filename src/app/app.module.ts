@@ -5,6 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HightLightDirective } from './Directive/hight-light.directive';
+
+
 
 
 
@@ -12,7 +16,11 @@ import { HeaderComponent } from './header/header.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    PageNotFoundComponent,
+    HightLightDirective,
+
+
   ],
   imports: [
     BrowserModule,
